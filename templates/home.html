@@ -1,0 +1,476 @@
+<!--<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+
+    <form action="{% url 'result' %}">
+
+        {% csrf_token %}
+
+
+        A1:<input type="text" required name="A1"><br><br>
+        A2:<input type="text" required name="A2"><br><br>
+        A3:<input type="text" required name="A3"><br><br>
+        A4:<input type="text" required name="A4"><br><br>
+        A5:<input type="text" required name="A5"><br><br>
+        A6:<input type="text" required name="A6"><br><br>
+        A7:<input type="text" required name="A7"><br><br>
+        A8:<input type="text" required name="A8"><br><br>
+        A9:<input type="text" required name="A9"><br><br>
+        A10:<input type="text" required name="A10"><br><br>
+        A11:<input type="text" required name="A11"><br><br>
+        A12:<input type="text" required name="A12"><br><br>
+        A13:<input type="text" required name="A13"><br><br>
+        A14:<input type="text" required name="A14"><br><br>
+        A15:<input type="text" required name="A15"><br><br>
+        A16:<input type="text" required name="A16"><br><br>
+        A17:<input type="text" required name="A17"><br><br>
+        A18:<input type="text" required name="A18"><br><br>
+        A19:<input type="text" required name="A19"><br><br>
+
+        <input type="submit" name="" value="submit">
+
+    </form>
+
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ASD Detector</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "shortcut icon" type="image/png" href="https://www.centralaustinpsychology.com/wp-content/uploads/2014/09/logo.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+function SwapDivsWithClick(div1,div2)
+{
+   d1 = document.getElementById(div1);
+   d2 = document.getElementById(div2);
+   if( d2.style.display == "none" )
+   {
+      d1.style.display = "none";
+      d2.style.display = "block";
+   }
+   else
+   {
+      d1.style.display = "block";
+      d2.style.display = "none";
+   }
+}
+</script>
+
+    <script type="text/javascript">
+  function calcscore()
+  {
+    var q1a,q2a,q3a,q4a,q5a,q6a,q7a,q8a,q9a,q10a;
+    var jaundicea,pdda,screena;
+
+     var q1 = document.getElementsByName('1st');
+
+            for(i = 0; i < q1.length; i++) {
+                if(q1[i].checked)
+                q1a = q1[i].value;
+            }
+     var q2 = document.getElementsByName('2nd');
+
+            for(i = 0; i < q1.length; i++) {
+                if(q2[i].checked)
+                q2a = q2[i].value;
+            }
+     var q3 = document.getElementsByName('3rd');
+
+            for(i = 0; i < q3.length; i++) {
+                if(q3[i].checked)
+                q3a = q3[i].value;
+            }
+      var q4 = document.getElementsByName('4th');
+
+            for(i = 0; i < q4.length; i++) {
+                if(q4[i].checked)
+                q4a = q4[i].value;
+            }
+      var q5 = document.getElementsByName('5th');
+            for(i = 0; i < q5.length; i++) {
+                if(q5[i].checked)
+                q5a = q5[i].value;
+            }
+      var q6 = document.getElementsByName('6th');
+
+            for(i = 0; i < q6.length; i++) {
+                if(q6[i].checked)
+                q6a = q6[i].value;
+            }
+      var q7 = document.getElementsByName('7th');
+            for(i = 0; i < q7.length; i++) {
+                if(q7[i].checked)
+                q7a = q7[i].value;
+            }
+      var q8 = document.getElementsByName('8th');
+            for(i = 0; i < q8.length; i++) {
+                if(q8[i].checked)
+                q8a = q8[i].value;
+            }
+      var q9 = document.getElementsByName('9th');
+            for(i = 0; i < q9.length; i++) {
+                if(q9[i].checked)
+                q9a = q9[i].value;
+            }
+      var q10 = document.getElementsByName('10th');
+            for(i = 0; i < q10.length; i++) {
+                if(q10[i].checked)
+                q10a = q10[i].value;
+            }
+      var jaundice = document.getElementsByName('jaun');
+            for(i = 0; i < jaundice.length; i++) {
+                if(jaundice[i].checked)
+                jaundicea = jaundice[i].value;
+            }
+             var pddq = document.getElementsByName('pdd');
+            for(i = 0; i < pddq.length; i++) {
+                if(pddq[i].checked)
+                pdda = jaundice[i].value;
+            }
+             var screenq= document.getElementsByName('screen');
+            for(i = 0; i < screenq.length; i++) {
+                if(screenq[i].checked)
+                screena = jaundice[i].value;
+            }
+      var hidden_jauna=document.getElementById('hidden_id_jaun');
+      hidden_jauna.value=jaundicea;
+      var hidden_pdda=document.getElementById('hidden_id_pdd');
+      hidden_pdda.value=pdda;
+      var hidden_screena=document.getElementById('hidden_id_screen');
+      hidden_screena.value=screena;
+
+
+      var total_score=0;
+      if(q1a==1)
+      {
+        total_score++;
+      }
+      if(q2a==1)
+      {
+        total_score++;
+      }
+      if(q3a==1)
+      {
+        total_score++;
+      }
+      if(q4a==1)
+      {
+        total_score++;
+      }
+      if(q5a==1)
+      {
+        total_score++;
+      }
+      if(q6a==1)
+      {
+        total_score++;
+      }
+      if(q7a==1)
+      {
+        total_score++;
+      }
+      if(q8a==1)
+      {
+        total_score++;
+      }
+      if(q9a==1)
+      {
+        total_score++;
+      }
+      if(q10a==1)
+      {
+        total_score++;
+      }
+      
+      var hidden_q1a=document.getElementById('hiddenq1');
+      hidden_q1a.value=q1a;
+      var hidden_q2a=document.getElementById('hiddenq2');
+      hidden_q2a.value=q2a;
+      var hidden_q3a=document.getElementById('hiddenq3');
+      hidden_q3a.value=q3a;
+      var hidden_q4a=document.getElementById('hiddenq4');
+      hidden_q4a.value=q4a;
+
+      var hidden_q5a=document.getElementById('hiddenq5');
+      hidden_q5a.value=q5a;
+
+      var hidden_q6a=document.getElementById('hiddenq6');
+      hidden_q6a.value=q6a;
+      var hidden_q7a=document.getElementById('hiddenq7');
+      hidden_q7a.value=q7a;
+      var hidden_q8a=document.getElementById('hiddenq8');
+      hidden_q8a.value=q8a;
+      var hidden_q9a=document.getElementById('hiddenq9');
+      hidden_q9a.value=q9a;
+      var hidden_q10a=document.getElementById('hiddenq10');
+      hidden_q10a.value=q10a;
+
+      var hidden_score=document.getElementById('hidden_id');
+      hidden_score.value=total_score;
+      
+  }
+</script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="home.html">
+        <img src="https://www.centralaustinpsychology.com/wp-content/uploads/2014/09/logo.jpg" alt="logo" style="width:40px;">
+    </a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="home.html"><i class="fa fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-info-circle"></i> About us</a>
+    </ul>
+</nav>
+
+<div class="container">
+    <form action="{% url 'result' %}">
+        {% csrf_token %}
+        <div id="step1" style="display: block;margin-top: 20px;padding: 25px; border-radius:10px; border:2px solid #95a5a6;">
+            <h4 style="text-align: center;">Fill in basic details to continue</h4>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="custom-select" id="gender" name="gender">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" class="form-control" id="age" placeholder="Enter Age" name="age">
+            </div>
+            <div class="form-group">
+                <label>Ethnicity:</label>
+                <select class="custom-select" id="ethnicity" name="ethnicity">
+                    <option value="4">Middle Eastern</option>
+                    <option value="9">White European</option>
+                    <option value="7">South Asian</option>
+                    <option value="6">Pasifika</option>
+                    <option value="0">Asian</option>
+                    <option value="8">Turkish</option>
+                    <option value="3">Latino</option>
+                    <option value="2">Hispanic</option>
+                    <option value="1">Black</option>
+                    <option value="5">Others</option>
+                </select>
+            </div>
+
+            <div id="side1" style="float: left; margin-right: 10%;">
+                <p>Born With Jaundice?</p>
+                <label class="radio-inline">
+                    <input type="radio" name="jaun" id="jaun" value="0" checked>No
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="jaun" id="jaun" value="1" >Yes
+                </label>
+            </div>
+
+
+            <div id="side2" style="float: left; margin-right: 10%;">
+                <p>Family member with PDD?</p>
+                <label class="radio-inline">
+                    <input type="radio" name="pdd" id="pdd" value="0" checked>No
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="pdd" id="pdd" value="1" >Yes
+                </label>
+            </div>
+
+            <div id="side3">
+                <p>Attended screening before?</p>
+                <label class="radio-inline">
+                    <input type="radio" name="screen" id="screen" value="0" checked>No
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="screen" id="screen" value="1" >Yes
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select class="custom-select" id="country" name="country">
+                    <option value="18">India</option>
+                    <option value="51">USA</option>
+                    <option value="49">UAE</option>
+                    <option value="50">UK</option>
+                    <option value="34">New Zealand</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="who">Who is taking this test?</label>
+                <select class="custom-select" id="who" name="who">
+                    <option value="4">Self</option>
+                    <option value="2">Parent</option>
+                    <option value="3">Relative</option>
+                    <option value="0">Health care professional</option>
+                </select>
+            </div>
+            <input type="hidden" name="hidden_jaun" id="hidden_id_jaun">
+            <input type="hidden" name="hidden_pdd" id="hidden_id_pdd">
+            <input type="hidden" name="hidden_screen" id="hidden_id_screen">
+            <button type="button" id="next1" class="btn btn-primary"  data-toggle="modal" data-target="#myModal">Next</button>
+        </div>
+
+        <div id="step2" style="display: none;margin-top: 20px; padding: 25px; border-radius:10px;border:2px solid #95a5a6;">
+            <h4 style="text-align: center;">Answer the questions</h4>
+            <p>1.I often notice small sounds when others do not?</p>
+            <label class="radio-inline">
+                <input type="radio" name="1st" id="1st" value="1" checked>Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="1st" id="1st" value="0" >No
+            </label>
+            <br>
+            <p>2.I usually concentrate more on the whole picture, rather than the small details?</p>
+            <label class="radio-inline">
+                <input type="radio" name="2nd" id="2nd" value="1" checked>Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="2nd" id="2nd" value="0" >No
+            </label>
+            <br>
+            <p>3.I find it easy to do more than one thing at once?</p>
+            <label class="radio-inline">
+                <input type="radio" name="3rd" id="3rd" value="1" checked>Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="3rd" id="3rd" value="0" >No
+            </label>
+            <br>
+
+            <p>4.If there is an interruption, I can switch back to what I was doing very quickly?</p>
+            <label class="radio-inline">
+                <input type="radio" name="4th" id="4th" value="1" checked>Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="4th" id="4th" value="0" >No
+            </label>
+            <br>
+
+            <p>5.I find it easy to read between the lines when someone is talking to me?</p>
+            <label class="radio-inline">
+                <input type="radio" name="5th" id="5th" value="1" checked>Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="5th" id="5th" value="0" >No
+            </label>
+            <br>
+
+
+            <button type="button" id="next2" class="btn btn-primary"  onclick="SwapDivsWithClick('step2','step3')">Next</button>
+        </div>
+
+
+        <div id="step3" style="display: none; margin-top: 20px; padding: 25px; border-radius:10px; border:2px solid #95a5a6;">
+            <h4 style="text-align: center;">Just a few more..!</h4>
+            <p>6.I know how to tell if someone listening to me is getting bored?</p>
+            <label class="radio-inline">
+                <input type="radio" name="6th" id="6th" value="1" checked>Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="6th" id="6th" value="0" >No
+            </label>
+            <br>
+            <p>7.When I’m reading a story, I find it difficult to work out the character’s intentions?</p>
+            <label class="radio-inline">
+                <input type="radio" name="7th" id="7th" value="1" checked>Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="7th" id="7th" value="0" >No
+            </label>
+            <br>
+            <p>8.I like to collect information about categories of things (e.g. types of cars, types of bird,
+                types of train, types of plant, etc)?</p>
+            <label class="radio-inline">
+                <input type="radio" name="8th" id="8th" value="1" checked>Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="8th" id="8th" value="0" >No
+            </label>
+            <br>
+
+            <p>9.I find it easy to work out what someone is thinking or feeling just by looking at their face?</p>
+            <label class="radio-inline">
+                <input type="radio" name="9th" id="9th" value="1" checked>Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="9th" id="9th" value="0" >No
+            </label>
+            <br>
+
+            <p>10.I find it difficult to work out people’s intentions?</p>
+            <label class="radio-inline">
+                <input type="radio" name="10th" id="10th" value="1" checked>Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="10th" id="10th" value="0" >No
+            </label>
+            <br>
+
+            <input type="hidden" name="hiddenq1" id="hiddenq1">
+            <input type="hidden" name="hiddenq2" id="hiddenq2">
+            <input type="hidden" name="hiddenq3" id="hiddenq3">
+            <input type="hidden" name="hiddenq4" id="hiddenq4">
+            <input type="hidden" name="hiddenq5" id="hiddenq5">
+            <input type="hidden" name="hiddenq6" id="hiddenq6">
+            <input type="hidden" name="hiddenq7" id="hiddenq7">
+            <input type="hidden" name="hiddenq8" id="hiddenq8">
+            <input type="hidden" name="hiddenq9" id="hiddenq9">
+            <input type="hidden" name="hiddenq10" id="hiddenq10">
+
+
+            <input type="hidden" name="total_score_hidden" id="hidden_id">
+            <button type="button" id="next3" class="btn btn-primary" onclick="SwapDivsWithClick('step3','step2')">Back</button>
+            <button type="submit" id="submit" class="btn btn-secondary" onclick="calcscore()">Submit</button>
+        </div>
+
+    </form>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Continue to Exam</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body">
+                    <p>Are u sure u want to proceed to exam?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="SwapDivsWithClick('step1','step2')">Continue</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+

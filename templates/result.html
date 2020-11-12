@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Result</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "shortcut icon" type="image/png" href="https://www.centralaustinpsychology.com/wp-content/uploads/2014/09/logo.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+    function setval()
+    {
+        var prompt='';
+        var res_id=document.getElementById('res');
+        if(res_id.value=='[1]'){
+            prompt='ASD  CLASSIFICATION:YES';
+        }
+        else
+        {
+            prompt='ASD  CLASSIFICATION:NO';
+        }
+        document.getElementById("result").innerHTML= prompt;
+        
+        var tot_id=document.getElementById('tot');
+        var score=tot_id.value;
+        document.getElementById("totalscore").innerHTML= "Total Score is "+score;
+    }
+    </script>
+</head>
+<body onload="setval()">
+    <div id="totalscore"></div>
+    <div id="result"></div>
+
+    <input type="hidden" name="res" id="res" value={{ans}}>
+    <input type="hidden" name="res" id="tot" value={{total}}>
+    
+    
+</body>
+</html>
